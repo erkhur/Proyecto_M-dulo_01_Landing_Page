@@ -1,0 +1,392 @@
+/* Variables CSS para colores y fuentes */
+:root {
+    --primary-color: #4CAF50; /* Verde brillante para lo ecológico */
+    --secondary-color: #388E3C; /* Verde más oscuro */
+    --accent-color: #FFC107; /* Amarillo para destacar */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --background-light: #f9f9f9;
+    --background-dark: #2c3e50; /* Un gris azulado oscuro */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --font-family-headings: 'Montserrat', sans-serif;
+    --font-family-body: 'Open Sans', sans-serif;
+}
+
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-headings);
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Botones */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.btn-primary.large {
+    padding: 15px 35px;
+    font-size: 1.1em;
+}
+
+.btn-cta { /* Botón en el header */
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: darken(var(--accent-color), 10%); /* No es CSS nativo, usar un color directo */
+    background-color: #FFD54F; /* Un poco más oscuro */
+}
+
+
+/* Header */
+.header {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.header .container {
+    display: flex; /* Usamos Flexbox para alinear el logo y la navegación */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.header .logo {
+    color: var(--primary-color);
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.header nav a {
+    color: var(--light-text-color);
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--background-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section .container {
+    display: flex; /* Flexbox para la imagen y el contenido */
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Espacio entre los elementos */
+    text-align: left;
+    flex-wrap: wrap; /* Para que los elementos se apilen en pantallas pequeñas */
+}
+
+.hero-content {
+    flex: 1; /* Permite que el contenido ocupe el espacio disponible */
+    min-width: 300px; /* Ancho mínimo para evitar que se comprima demasiado */
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: left; /* Alineado a la izquierda */
+}
+
+.hero-content .slogan {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px var(--shadow-light);
+}
+
+/* Problem-Solution Section */
+.problem-solution-section {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.problem-solution-section .container {
+    display: flex; /* Flexbox para las cajas de problema y solución */
+    gap: 30px;
+    justify-content: center; /* Centrar las cajas */
+    flex-wrap: wrap;
+}
+
+.problem-box, .solution-box {
+    flex: 1; /* Permite que cada caja ocupe el espacio disponible */
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-box h3, .solution-box h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.benefits-section h2 {
+    color: var(--secondary-color);
+}
+
+.benefits-grid {
+    display: grid; /* Usamos Grid para organizar las tarjetas de beneficios */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.benefit-card p {
+    color: var(--text-color);
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--light-text-color);
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Animaciones */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animated-box {
+    animation: fadeInScale 0.8s ease-out forwards;
+    /* Retraso para que aparezcan en secuencia */
+    /* Este retraso se aplicará con JavaScript para mayor control */
+}
+
+/* Efectos hover para las cajas animadas */
+.animated-box:hover {
+    transform: translateY(-10px); /* Ligero levantamiento */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 2em; margin-bottom: 30px;}
+    h3 { font-size: 1.5em; }
+
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header nav {
+        margin-top: 15px;
+    }
+    .header nav a {
+        margin: 0 10px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-content h2 {
+        font-size: 2.8em;
+        text-align: center;
+    }
+    .hero-content .slogan {
+        font-size: 1.1em;
+    }
+
+    .problem-solution-section .container,
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+    .btn-primary.large {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .cta-section h2 {
+        font-size: 2em;
+    }
+}
+
+
+/* Botón de WhatsApp  */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+.whatsapp-footer {
+    display: none;
+}
